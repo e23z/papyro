@@ -1,0 +1,83 @@
+.wysiwyg-editor {
+  min-height: 17rem; // 10rem
+  max-height: 15rem;
+  overflow-y: auto;
+
+  .text-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+.custom-btn {
+  display: inline-block;
+  // margin: 0 5px 0 0;
+  padding: 3px 8px;
+  height: 30px;
+  line-height: 22px;
+  box-sizing: border-box;
+  background: none #fdfdfd;
+  background: linear-gradient(180deg,#fdfdfd 0,#f6f7f8);
+  border: 1px solid #999;
+  // border-radius: 2px;
+  color: #333;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 2rem;
+  height: 1.9rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  &.active {
+    background: none #d8d8d8;
+  }
+
+  &:focus {
+    box-shadow: none!important;
+    outline: none!important;
+  }
+  
+  &:focus-within {
+    box-shadow: none!important;
+    outline: none!important;
+  }
+
+  &.text-align-btn {
+    border-right: none;
+  }
+
+  &.text-align-btn-last {
+    border-right: 1px solid #999;
+    border-radius: 0 2px 2px 0;
+    margin-right: 5px;
+  }
+
+  &.text-align-btn-first {
+    border-radius: 2px 0 0 2px;
+  }
+}
+
+span[class^='ImageSpan_'] {
+  letter-spacing: 0!important;
+  width: 100%!important;
+  background-size: contain!important;
+  line-height: 15rem!important;
+  font-size: 15rem!important;
+  height: 15rem!important;
+}

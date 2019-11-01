@@ -1,0 +1,38 @@
+.menu-sortable {
+  list-style: none;
+  padding: 0;
+}
+
+.sortable-item, .selected-sortable-item {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px #dfdfdf solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  margin-bottom: -1px;
+
+  span {
+    color: transparent;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 18px;
+    height: 11px;
+    opacity: .25;
+    cursor: row-resize;
+    background: linear-gradient(180deg,#000,#000 20%,#fff 0,#fff 40%,#000 0,#000 60%,#fff 0,#fff 80%,#000 0,#000);
+  }
+}
+
+.menu-sortable-title {
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #555;
+}
+
+.selected-sortable-item {
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, .2);
+}

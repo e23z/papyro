@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Nepal New Zealand Friendship Society</title>
+
+    <style>
+      body,html {
+        margin: 0;
+        padding: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      
+      #root {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .flag {
+        display: inline-block;
+        width: 180px;
+        height: 120px; /*120px*/
+        overflow: hidden;
+        position: relative;
+      }
+
+      .holder {
+        display: inline-block;
+        border-left: 4px solid #ccc;
+        height: 200px;
+      }
+
+      .left-flag {
+        transform: rotateY(180deg) rotateZ(15deg);
+      }
+
+      .right-flag {
+        transform: rotateZ(15deg) translateY(9px);
+      }
+
+      .flags-wrapper {
+        display: inline-block;
+        transform: scale(.5);
+      }
+
+      .nepal {
+        /*transform: rotateY(180deg) rotateZ(15deg);*/
+        width: 116px;
+        background: radial-gradient(44px at 16% 34%, #DC1038 0, #DC143C 35%, transparent 35%, transparent 100%), radial-gradient(44px at 16% 39%, white 0, white 35%, transparent 35%, transparent 100%), linear-gradient(40deg, #DC143C 30%, transparent 30%) 4px -6px, linear-gradient(33deg, #DC143C 25%, transparent 25%) 4px -54px, linear-gradient(40deg, #003893 36%, transparent 32%), linear-gradient(33deg, #003893 30%, transparent 25%) 0px -50px;
+        background-size: 180px 120px;
+        position: relative;
+      }
+
+      .nepal:before {
+        position: absolute;
+        content: "✹";
+        color: white;
+        font-size: 48px;
+        bottom: 4px;
+        left: 10px;
+      }
+
+      .nepal:after {
+        position: absolute;
+        content: "✹";
+        color: white;
+        font-size: 28px;
+        top: 36px;
+        left: 18px;
+      }
+
+      .new-zealand {
+        background: #00247D;
+        background-size: 100px 100px;
+        position: relative;
+        overflow: hidden;
+        /* transform: translateX(20px) translateY(9px) rotateZ(15deg); */
+      }
+
+      .new-zealand:before {
+        overflow: hidden;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom, transparent 40%, #CC142B 40%, #CC142B 60%, transparent 60%), linear-gradient(to right, transparent 45%, #CC142B 45%, #CC142B 55%, transparent 55%), linear-gradient(to bottom, transparent 35%, white 35%, white 65%, transparent 65%), linear-gradient(to right, transparent 40%, white 40%, white 60%, transparent 60%), linear-gradient(146deg, transparent 50%, #CC142B 50%, #CC142B 53%, transparent 53%) -45px 31px, linear-gradient(146deg, transparent 50%, #CC142B 50%, #CC142B 53%, transparent 53%) 46px -35px, linear-gradient(34deg, transparent 50%, #CC142B 50%, #CC142B 53%, transparent 53%) -51px -31px, linear-gradient(34deg, transparent 50%, #CC142B 50%, #CC142B 53%, transparent 53%) 48px 32px, linear-gradient(146deg, transparent 45%, white 45%, white 55%, transparent 55%), linear-gradient(34deg, transparent 45%, white 45%, white 55%, transparent 55%);
+        background-size: 90px 60px;
+        width: 90px;
+        height: 60px;
+        background-repeat: no-repeat; 
+      }
+
+      .new-zealand span::before {
+        content: '⋆';
+        font-size: 4rem;
+        color: #fdfdfd;
+        position: absolute;
+      }
+      
+      .new-zealand span::after {
+        content: '⋆';
+        font-size: 2.8rem;
+        color: #cc142b;
+        position: absolute;
+      }
+
+      .new-zealand span:nth-child(1)::before {
+        top: -0.6rem;
+        right: 2rem;
+      }
+      
+      .new-zealand span:nth-child(1)::after {
+        top: 0.2rem;
+        right: 2.25rem;
+      }
+      
+      .new-zealand span:nth-child(2)::before {
+        top: 1.4rem;
+        right: 3.4rem;
+      }
+      
+      .new-zealand span:nth-child(2)::after {
+        top: 2.2rem;
+        right: 3.65rem;
+      }
+      
+      .new-zealand span:nth-child(3)::before {
+        top: 0.5rem;
+        right: .5rem;
+      }
+      
+      .new-zealand span:nth-child(3)::after {
+        top: 1.3rem;
+        right: 0.75rem;
+      }
+      
+      .new-zealand span:nth-child(4)::before {
+        top: 3.4rem;
+        right: 2rem;
+      }
+      
+      .new-zealand span:nth-child(4)::after {
+        top: 4.2rem;
+        right: 2.25rem;
+      }
+
+      .anim-flags {
+        display: inline-block;
+        /*background: #ccc;*/
+        /* animation: spin-flags 2s ease-in-out infinite; */
+      }
+
+      @keyframes spin-flags {
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="flags-wrapper">
+        <div class="anim-flags">
+          <div class="holder inverse left-flag">
+            <div class="flag nepal"></div>
+          </div>
+          <div class="holder right-flag">
+            <div class="flag new-zealand">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

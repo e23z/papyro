@@ -1,0 +1,50 @@
+.gallery-adm {
+  .pictures {
+    div {
+      // border: 1px solid #ccc;
+      position: relative;
+      margin-bottom: 2rem;
+      box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px 0;
+      border-radius: .25rem;
+      min-height: 4.7rem;
+
+      img {
+        width: 100%;
+        border-radius: .25rem;
+      }
+
+      p {
+        color: #000;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        background-color: #fff;
+        width: 100%;
+        padding: 0.25rem;
+        opacity: 0.9;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: .75rem;
+        font-weight: 400;
+        user-select: none;
+        cursor: default;
+      }
+
+      button {
+        position: absolute;
+        top: .25rem;
+        right: .25rem;
+
+        &:first-of-type {
+          top: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+.img-upload-btn {
+  .image {
+    min-height: 10rem;
+  }
+}
